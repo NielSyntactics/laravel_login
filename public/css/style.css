@@ -1,0 +1,82 @@
+.profile-info {
+   display: flex;
+   justify-content: start;
+    align-items: start;
+   /* line-height: 1; */
+}
+
+.profile-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 13px;
+}
+
+.name-hours {
+    /* margin-left: 10px; */
+    padding: 5px 10px;
+}
+
+.category-show {
+    border-radius: 16px !important;
+}
+
+.post-excerpt p {
+    margin-bottom: 0 !important;
+}
+
+.bookmark-button {
+    border-radius: 13px !important;
+}
+
+.add-comment-button {
+    border-radius: 16px !important;
+}
+
+.image-stack {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    position: relative;
+}
+
+.img-stack-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 13px;
+    border: 2px solid #fff;
+}
+
+.image-stack-top {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.image-stack-button {
+    grid-column: 2/-1;
+    grid-row: 2/4;
+}
+
+.image-stack-top-2 {
+    grid-column: 2 / span 5;
+    grid-row: 1 / span 2;
+    justify-self: center;
+}
+
+.image-stack-button-2{
+    grid-column: 4/ span 6;
+    grid-row: 2/4;
+    justify-self: center;
+
+}
+
+.card {
+    border-radius: 16px !important;
+}
+
+.the-excerpt {
+    /* width: 120ch; */
+    height: 5ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
