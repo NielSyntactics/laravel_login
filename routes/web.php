@@ -28,4 +28,5 @@ Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'authen
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+    Route::resource('/notes',App\Http\Controllers\NoteController::class);
 });
