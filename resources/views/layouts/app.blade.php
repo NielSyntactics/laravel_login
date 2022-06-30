@@ -45,6 +45,12 @@
                         @endif
                     @else
                         <li class="nav-item">
+                            <a href=" {{route('user.index')}} " class="nav-link">Organization</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=" {{route('college.index')}} " class="nav-link">College</a>
+                        </li>
+                        <li class="nav-item">
                             <a href=" {{route('notes.index')}} " class="nav-link">Notes</a>
                         </li>
                         <li class="nav-item dropdown">

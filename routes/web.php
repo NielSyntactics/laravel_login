@@ -28,5 +28,14 @@ Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'authen
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
-    Route::resource('/notes',App\Http\Controllers\NoteController::class);
+    Route::group(['middleware' => 'CheckRole', 'prefix' => 'admin'], function() {
+        Route::resource('/notes',App\Http\Controllers\NoteController::class);
+        Route::resource('/college', App\Http\Controllers\CollegeController::class);
+        Route::resource('/user', App\Http\Controllers\UserController::class);
+        Route::put('/user/{user}/editbasic',[App\Http\Controllers\UserController::class, 'updateBasicInformation'])->name('user.updateBasicInformation');
+        Route::put('/user/{user}/editemail',[App\Http\Controllers\UserController::class, 'updateEmail'])->name('user.updateEmail');
+        Route::put('/user/{user}/editpassword',[App\Http\Controllers\UserController::class, 'updatePassword'])->name('user.updatePassword');
+        Route::put('/user/{user}/editimage',[App\Http\Controllers\UserController::class, 'updateImage'])->name('user.updateImage');
+    });
+
 });
