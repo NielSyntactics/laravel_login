@@ -1,6 +1,8 @@
 <?php
 
+use App\Mail\NewUserNotification;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,4 +44,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::delete('/file/{id}',[App\Http\Controllers\FileController::class, 'destroy'])->name('file.delete');
     });
 
+
+    Route::get('/mail',[App\Http\Controllers\FeedbackController::class, 'index'])->name('mail.index');
+    Route::post('/mail',[App\Http\Controllers\FeedbackController::class, 'send'])->name('mail.send');
 });
