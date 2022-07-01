@@ -36,6 +36,10 @@ Route::group(['middleware' => 'auth'], function() {
         Route::put('/user/{user}/editemail',[App\Http\Controllers\UserController::class, 'updateEmail'])->name('user.updateEmail');
         Route::put('/user/{user}/editpassword',[App\Http\Controllers\UserController::class, 'updatePassword'])->name('user.updatePassword');
         Route::put('/user/{user}/editimage',[App\Http\Controllers\UserController::class, 'updateImage'])->name('user.updateImage');
+        Route::get('/file',[App\Http\Controllers\FileController::class, 'index'])->name('file.index');
+        Route::post('/file',[App\Http\Controllers\FileController::class, 'store'])->name('file.store');
+        Route::get('/file/{id}',[App\Http\Controllers\FileController::class, 'show'])->name('file.show');
+        Route::delete('/file/{id}',[App\Http\Controllers\FileController::class, 'destroy'])->name('file.delete');
     });
 
 });

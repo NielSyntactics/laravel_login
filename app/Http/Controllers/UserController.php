@@ -101,4 +101,5 @@ class UserController extends Controller
 
         return redirect()->route(route:'user.index')->with('success','Image Updated');
     }
+
 }

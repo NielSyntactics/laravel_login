@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- js --}}
     <script src="{{ asset('js/app.js') }}"></script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -44,6 +45,9 @@
                             </li>
                         @endif
                     @else
+                        <li class="nav-item">
+                            <a href=" {{route('file.index')}} " class="nav-link">File Manager</a>
+                        </li>
                         <li class="nav-item">
                             <a href=" {{route('user.index')}} " class="nav-link">Organization</a>
                         </li>
