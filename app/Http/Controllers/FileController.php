@@ -17,8 +17,13 @@ class FileController extends Controller
     }
 
     public function store(Request $request) {
-        if($request->has(key:'files')) {
 
+        $request->validate([
+            'files'=>'required',
+        ]);
+
+
+        if($request->has(key:'files')) {
 
             $path = public_path('files/'). '/'.Auth::user()->id;
             $pathDir = 'files/'. '/'.Auth::user()->id;
@@ -59,7 +64,6 @@ class FileController extends Controller
         File::delete($destinationPath.'/'.$file->name);
 
         $file->delete();
-
         return redirect()->route(route:'file.show',parameters:$file->user_id);
     }
 }

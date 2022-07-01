@@ -29,6 +29,7 @@ Route::post('/logout',[App\Http\Controllers\Auth\LoginController::class, 'logout
 Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'authenticate'])->name('login.authenticate');
 
 Route::group(['middleware' => 'auth'], function() {
+
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
     Route::group(['middleware' => 'CheckRole', 'prefix' => 'admin'], function() {
         Route::resource('/notes',App\Http\Controllers\NoteController::class);
@@ -47,4 +48,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/mail',[App\Http\Controllers\FeedbackController::class, 'index'])->name('mail.index');
     Route::post('/mail',[App\Http\Controllers\FeedbackController::class, 'send'])->name('mail.send');
+
+    Route::get('/signage',[App\Http\Controllers\SignaturePadController::class, 'index'])->name('signature.index');
+    Route::post('/signage',[App\Http\Controllers\SignaturePadController::class, 'store'])->name('signature.store');
+
 });

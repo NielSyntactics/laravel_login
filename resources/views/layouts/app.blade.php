@@ -46,6 +46,9 @@
                         @endif
                     @else
                         <li class="nav-item">
+                            <a href=" {{route('signature.index')}} " class="nav-link">Signature</a>
+                        </li>
+                        <li class="nav-item">
                             <a href=" {{route('file.index')}} " class="nav-link">File Manager</a>
                         </li>
                         <li class="nav-item">
