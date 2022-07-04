@@ -17,7 +17,7 @@ class UserController extends Controller
 {
     public function index() {
 
-        $organizations = User::where('is_admin','=',false)->where('status','=',true)->get();
+        $organizations = User::with('information')->where('is_admin','=',false)->where('status','=',true)->get();
         return view('user.index')->with('organizations', $organizations);
     }
 
@@ -28,8 +28,6 @@ class UserController extends Controller
     }
 
     public function store(StoreUserRequest $request) {
-
-
         $user = new User;
         $user->email = $request->email_input;
         $user->password = Hash::make($request->password);
