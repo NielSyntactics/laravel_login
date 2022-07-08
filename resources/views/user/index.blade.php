@@ -7,10 +7,7 @@
         </div>
         <div class="card text-left">
             <div class="card-header">
-                <div class="d-flex justify-content-between">
-                    <h3>Organization</h3>
-                    <a href="{{route('user.create')}}" class="btn btn-outline-primary">Add Organization</a>
-                </div>
+                <x-cardheader title="Organization" linkText="Add Organization" route="{{ route('user.create') }}"  />
             </div>
             <div class="card-body">
                 @if (count($organizations) == 0)

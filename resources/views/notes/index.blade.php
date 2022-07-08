@@ -4,10 +4,7 @@
     <div class="container m-auto w-50 pt-5 pb-5">
         <div class="card text-left">
             <div class="card-header">
-                <div class="d-flex justify-content-between">
-                    <h3>Notes</h3>
-                    <a href="{{route('notes.create')}}" class="btn btn-outline-primary">Add Notes</a>
-                </div>
+                <x-cardheader title="Notes" linkText="Add Notes" route="{{ route('notes.create') }}"  />
             </div>
             <div class="card-body">
                 @if (count($notes) == 0)

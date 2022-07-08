@@ -45,24 +45,15 @@
                             </li>
                         @endif
                     @else
-                        <li class="nav-item">
-                            <a href=" {{route('signature.index')}} " class="nav-link">Signature</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href=" {{route('file.index')}} " class="nav-link">File Manager</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href=" {{route('user.index')}} " class="nav-link">Organization</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href=" {{route('college.index')}} " class="nav-link">College</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href=" {{route('notes.index')}} " class="nav-link">Notes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href=" {{route('mail.index')}} " class="nav-link">Contact Us</a>
-                        </li>
+                        <x-navitem route="{{route('post.index')}}" text="Post"/>
+                        <x-navitem route="{{route('product.index')}}" text="Product"/>
+                        <x-navitem route="{{route('signature.index')}}" text="Signature"/>
+                        <x-navitem route="{{route('file.index')}}" text="File Manager"/>
+                        <x-navitem route="{{route('user.index')}}" text="Organization"/>
+                        <x-navitem route="{{route('college.index')}}" text="College"/>
+                        <x-navitem route="{{route('notes.index')}}" text="Notes"/>
+                        <x-navitem route="{{route('mail.index')}}" text="Contact Us"/>
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}

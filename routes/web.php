@@ -43,6 +43,11 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/file',[App\Http\Controllers\FileController::class, 'store'])->name('file.store');
         Route::get('/file/{id}',[App\Http\Controllers\FileController::class, 'show'])->name('file.show');
         Route::delete('/file/{id}',[App\Http\Controllers\FileController::class, 'destroy'])->name('file.delete');
+
+        // Product
+        Route::resource('/product',App\Http\Controllers\ProductController::class);
+        // Post
+        Route::resource('/post',App\Http\Controllers\PostController::class);
     });
 
 
