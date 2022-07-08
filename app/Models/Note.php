@@ -12,4 +12,8 @@ class Note extends Model
     protected $fillable = [
         'note_text',
     ];
+
+    public function scopePostedWithinDay($query, $days) {
+        return $query->where('created_at','>',now()->subDays(value:$days));
+    }
 }

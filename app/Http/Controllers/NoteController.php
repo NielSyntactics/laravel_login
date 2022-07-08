@@ -15,9 +15,10 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $notes = Note::latest()->get();
+        $notes = Note::postedWithinDay(3)->orderBy('created_at','desc')->get();
+        $notes1 = Note::postedWithinDay(4)->orderBy('created_at','asc')->get();
 
-        return view('notes.index')->with('notes', $notes);
+        return view('notes.index')->with('notes', $notes)->with('notes1', $notes1);
     }
 
     /**
